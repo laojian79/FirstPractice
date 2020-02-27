@@ -13,7 +13,7 @@ git swtich -c (create branch)
 git status
 git log -b <filename>
 git log --graph --pretty=oneline --abbrev-commit
-
+git merge <branch name> # merge <branch name> to current branch
 git merge --no-ff -m "merge with no-ff" dev
 
 git config --global alias.co checkout
