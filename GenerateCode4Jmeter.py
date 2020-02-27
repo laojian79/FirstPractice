@@ -1,3 +1,4 @@
+# Extract test name and test per second from test plan.
 with open('ScaleModel_SingleAPI_New.csv', 'w') as fw:
     with open('ScaleModel_SingleAPI_New.txt', 'r') as f:
         for line in f.readlines():
