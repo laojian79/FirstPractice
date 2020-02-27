@@ -13,6 +13,7 @@ git swtich -c (create branch)
 git status
 git log -b <filename>
 git log --graph --pretty=oneline --abbrev-commit
+
 git merge --no-ff -m "merge with no-ff" dev
 
 git config --global alias.co checkout
@@ -20,6 +21,7 @@ git config --global alias.ci commit
 git config --global alias.br branch
 git config --global alias.unstage 'reset HEAD'
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git lg
 
 git commit -m "#998688 reach rps setup" -m "#998688 add reach test RPS setup"
 git push --set-upstream origin users/sheng.zhang/workitem/998688
