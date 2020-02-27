@@ -8,7 +8,8 @@ git diff
 git remote -v
 git version
 git pull
-git branch -b (create branch)
+git checkout -b (create branch)
+git branch 
 git swtich -c (create branch)
 git status
 git log -b <filename>
@@ -16,6 +17,7 @@ git log --graph --pretty=oneline --abbrev-commit
 git merge <branch name> # merge <branch name> to current branch
 git merge --no-ff -m "merge with no-ff" dev
 
+git rebase
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.br branch
