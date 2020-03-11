@@ -29,11 +29,15 @@ with open('TestTPMCalculateCode.txt', 'w') as fw:
                 name = name.replace('\n', '')
                 totalThreadsStr += name+'_Threads'
                 totalThreadsStr += ' + '
-                fw.write(f'int {name}_Threads = (int)Math.ceil(${{{name}_baselineTPM}} * ${{devicesCount}} / ${{agentCount}} /rpmPerThreads);')
+                # fw.write(f'int {name}_Threads = (int)Math.ceil(${{{name}_baselineTPM}} * ${{devicesCount}} / ${{agentCount}} /rpmPerThreads);')
+                fw.write(f'int {name}_Threads = (int)Math.ceil(${{{name}_baselineTPS}} * 60 / ${{agentCount}} /rpmPerThreads);') # oss
                 fw.write('\n')
-                fw.write(f'double {name}_TPM = ${{{name}_baselineTPM}} * ${{devicesCount}} / ${{agentCount}};')
+                # fw.write(f'double {name}_TPM = ${{{name}_baselineTPM}} * ${{devicesCount}} / ${{agentCount}};')
+                fw.write(f'double {name}_TPS = ${{{name}_baselineTPS}} * 60 / ${{agentCount}};') # oss
                 fw.write('\n')
-                fw.write(f'props.put("{name}_TPM", String.valueOf({name}_TPM));')
+                fw.write(f'props.put("{name}_Threads", String.valueOf({name}_Threads));')
+                fw.write('\n')
+                fw.write(f'props.put("{name}_TPS", String.valueOf({name}_TPS));')
                 fw.write('\n')
     print(totalThreadsStr)
     fw.write(totalThreadsStr[:-3]+';\n')
